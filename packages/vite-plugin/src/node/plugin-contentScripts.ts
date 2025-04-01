@@ -167,6 +167,8 @@ export const pluginContentScripts: CrxPluginFn = () => {
                 })
 
                 script.loaderName = this.getFileName(refId)
+              } else {
+                bundleFileInfo.code = `(function(){${bundleFileInfo.code}})()`
               }
             } else if (script.type === 'iife') {
               throw new Error('IIFE content scripts are not implemented')
