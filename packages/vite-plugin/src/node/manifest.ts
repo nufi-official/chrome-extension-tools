@@ -277,4 +277,9 @@ export interface ManifestV3 {
   web_accessible_resources?:
     | (WebAccessibleResourceById | WebAccessibleResourceByMatch)[]
     | undefined
+  /**
+   * references any HTML files that need to be physically
+   * copied to the extension directory even in dev mode (e.g. offscreen document)
+   */
+  _extra_html_files?: string[] | undefined
 }
