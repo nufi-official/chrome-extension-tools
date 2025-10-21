@@ -78,7 +78,10 @@ export function htmlFiles(manifest: ManifestV3): string[] {
     manifest.options_page,
     manifest.options_ui?.page,
     manifest.sandbox?.pages,
-    manifest.side_panel?.default_path
+    manifest.side_panel?.default_path,
+    manifest.permissions?.includes('offscreen')
+      ? 'offscreen.html'
+      : undefined,
   ]
     .flat()
     .filter(isString)
